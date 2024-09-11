@@ -8,6 +8,7 @@ export class MissionsController extends BaseController {
     super('api/missions')
     this.router
       .get('', this.getMissions)
+      .put('/:ratId', this.createMission)
 
   }
   async getMissions(request, response, next) {
@@ -17,6 +18,19 @@ export class MissionsController extends BaseController {
     } catch (error) {
       next(error)
     }
+  }
+
+
+
+  async createMission(request, response, next) {
+    try {
+      const mission = await missionsService.createMission()
+      response.send(mission)
+
+    } catch (error) {
+      next(error)
+    }
+
   }
 
 

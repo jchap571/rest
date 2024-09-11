@@ -18,9 +18,9 @@ export const MissionSchema = new Schema(
 
 
 MissionSchema.virtual('location', {
-  localField: '_id',
-  foreignField: 'locationId',
-  ref: 'Mission',
+  localField: 'locationId',
+  foreignField: '_id',
+  ref: 'Location',
   justOne: true,
 })
 
