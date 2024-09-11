@@ -24,6 +24,7 @@ export class MissionsController extends BaseController {
 
   async createMission(request, response, next) {
     try {
+      const missionData = request.body
       const mission = await missionsService.createMission()
       response.send(mission)
 

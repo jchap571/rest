@@ -8,7 +8,7 @@ class MissionsService {
     return mission
   }
   async getMissions() {
-    const missions = await dbContext.Missions.find()
+    const missions = await dbContext.Missions.find().populate('rat').populate('location')
     return missions
   }
 

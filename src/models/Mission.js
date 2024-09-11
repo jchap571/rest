@@ -9,11 +9,11 @@ export const MissionSchema = new Schema(
     locationId: { type: Schema.ObjectId, required: true },
     ratId: { type: Schema.ObjectId, required: true },
     completed: { type: Boolean, required: true },
-  }
+  }, { timestamps: true, toJSON: { virtuals: true } })
 
 
 
-)
+
 
 
 
